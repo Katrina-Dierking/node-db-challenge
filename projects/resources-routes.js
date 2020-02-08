@@ -16,7 +16,7 @@ router.get('/:id/resources', validateProjectId, (req, res) => {
             res.status(500).json
             ({ 
                 success: false, 
-                errorMessage: 'Failed to get resources from database', error
+                errorMessage: 'Cannot find resources', error
             });
         });
 });

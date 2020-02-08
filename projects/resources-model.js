@@ -1,4 +1,4 @@
-const db = require('../db-Config.js');
+const db = require('../data/db-config.js');
 
 
 function add(resource) {

@@ -2,7 +2,7 @@
 exports.up = async (knex) => {
     await knex.schema.createTable('projects', (table) => {
         table.increments('id').unique().notNullable();
-        table.text('projects_name').uniqute().notNullable();
+        table.text('projects_name').unique().notNullable();
         table.string('projects_description', 159);
         table.boolean('projects_completed').notNullable().defaultTo(false);
     })
@@ -25,7 +25,7 @@ exports.up = async (knex) => {
             .references('id')
             .inTable('projects')
             .onUpdate('CASCADE')
-            .ondDelete('CASCADE');
+            .onDelete('CASCADE');
     })
   
 };

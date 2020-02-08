@@ -12,11 +12,11 @@ router.get('/:id/resources', validateProjectId, (req, res) => {
         .then(resources => {
             res.json(resources);
         })
-        .catch(err => {
+        .catch(error => {
             res.status(500).json
             ({ 
                 success: false, 
-                errorMessage: 'Failed to get resources from database' 
+                errorMessage: 'Failed to get resources from database', error
             });
         });
 });
@@ -33,17 +33,17 @@ router.post('/:id/resources', validateProjectId, validateResource, (req, res) =>
 
 function validateProjectId(req, res, next) {
     const id = req.params.id;
-    Project.findProjectById(id)
+    Project.findById(id)
         .then(project => {
             if (project[0]) {
                 console.log('id validated');
             }
         })
-        .catch(err => {
+        .catch(error => {
             res.status(400).json
             ({ 
                 success: false,
-                errorMessage: 'project id is invalid' 
+                errorMessage: 'project id is invalid', error
             });
         })
     next();

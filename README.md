@@ -38,13 +38,23 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] Explain the difference between `Relational Databases` and `SQL`.
+- [*] Explain the difference between `Relational Databases` and `SQL`.
 
-- [ ] Why do tables need a `primary key`?
+Relational databases are structured. They contain two or more tables with columns and rows. Each row is an entry, and each column sorts a specific type of information, such as a name or address. In order for relational databases to be effective, the data needs to be stored in a structured manner.
 
-- [ ] What is the name given to a table column that references the primary key on another table.
+Non-relational databases (SQL) are far more flexible than relational databases because they contain unstructured data. You can think of them as being large file folders that contain all types of information, such as photos and online activity.
 
-- [ ] What do we need in order to have a _many to many_ relationship between two tables.
+- [*] Why do tables need a `primary key`?
+
+Main purpose of having a primary key in a table is unique identification of a record in the table i.e. primary key is used to identify a record uniquely in the table.
+
+- [*] What is the name given to a table column that references the primary key on another table.
+
+Foreign Key
+
+- [*] What do we need in order to have a _many to many_ relationship between two tables.
+
+A Join table using forgeign keyes to connect them
 
 ## Minimum Viable Product
 

@@ -11,25 +11,29 @@ router.get('/', (req, res) => {
       res.json(projects);
     })
     .catch(err => {
-      res.status(500).json({ message: 'Failed to get projects' });
+      res.status(500).json
+         ({ 
+          success:false,
+          errorMessage: 'Failed to get projects' 
+        });
     });
   });
   
-  router.get('/:id', (req, res) => {
-    const { id } = req.params;
+//   router.get('/:id', (req, res) => {
+//     const { id } = req.params;
   
-    Projects.findById(id)
-    .then(projects => {
-      if (projects) {
-        res.json(projects);
-      } else {
-        res.status(404).json({ message: 'Could not find projects with given id.' })
-      }
-    })
-    .catch(err => {
-      res.status(500).json({ message: 'Failed to get projects' });
-    });
-  });
+//     Projects.findById(id)
+//     .then(projects => {
+//       if (projects) {
+//         res.json(projects);
+//       } else {
+//         res.status(404).json({ message: 'Could not find projects with given id.' })
+//       }
+//     })
+//     .catch(err => {
+//       res.status(500).json({ message: 'Failed to get projects' });
+//     });
+//   });
   
 
   router.post('/', (req, res) => {
@@ -40,6 +44,10 @@ router.get('/', (req, res) => {
       res.status(201).json(project);
     })
     .catch (err => {
-      res.status(500).json({ message: 'Failed to create new project' });
+      res.status(500).json
+        ({ 
+            success: false, 
+            errorMessage: 'Failed to create new project'
+        });
     });
   });

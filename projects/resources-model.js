@@ -1,9 +1,5 @@
 const db = require('../db-Config.js');
 
-module.exports = {
-    add,
-    find
-}
 
 function add(resource) {
     return db('resources')
@@ -21,4 +17,9 @@ function find(id) {
             'r.name', 
             'r.description')
         .where({ project_id: id })
+}
+
+module.exports = {
+    add,
+    find
 }

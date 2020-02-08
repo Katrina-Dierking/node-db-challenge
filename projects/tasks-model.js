@@ -1,9 +1,5 @@
 const db = require('../db-Config.js');
 
-module.exports = {
-    add,
-    find
-}
 
 function add(task) {
     return db('tasks')
@@ -25,4 +21,9 @@ function find(id) {
             't.completed')
 
         .where({ project_id: id })
+}
+
+module.exports = {
+    add,
+    find
 }

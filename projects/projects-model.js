@@ -10,7 +10,7 @@ function findById(id) {
         .first()
 }
 
-function add (project) {
+function add (project){
     return db('projects')
     .insert (project, "id")
     .then(([id]) => {

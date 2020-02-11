@@ -36,14 +36,14 @@ function validateProjectId(req, res, next) {
     Project.findById(id)
         .then(project => {
             if (project[0]) {
-                console.log('id validated');
+                console.log('kd:resources-routes:validateProjectId:project.findById');
             }
         })
         .catch(error => {
             res.status(400).json
             ({ 
                 success: false,
-                errorMessage: 'project id is invalid', error
+                errorMessage: 'no project with that Id', error
             });
         })
     next();
@@ -56,7 +56,7 @@ function validateResource(req, res, next) {
         res.status(400).json
         ({ 
             success: false,
-            errorMessage: "missing required name field" 
+            errorMessage: "name is required" 
         });
     } else if (!resourceInfo.project_id) {
         resourceInfo.project_id = id;

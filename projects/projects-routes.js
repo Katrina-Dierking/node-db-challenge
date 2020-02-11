@@ -1,6 +1,6 @@
 const express = require('express');
 
-const Project = require('./projects-model.js');
+const Project = require('./projects-model');
 
 const router = express.Router();
 
@@ -64,7 +64,7 @@ function validateProjectId(req, res, next) {
     .catch(error => {
       res.status(400).json
          ({ 
-             success:false,
+            success:false,
             errorMessage: 'cannot locate project with that Id', error 
         });
     })

@@ -44,14 +44,14 @@ function validateProjectId(req, res, next) {
   Project.findById(id)
     .then(project => {
       if (project[0]) {
-        console.log('id validated');
+        console.log('kd:tasks-routes.validateProjectId.projectFindById, valid id');
       }
     })
     .catch(error => {
       res.status(400).json
       ({ 
         success: false, 
-        errorMessage: 'project id is invalid', error
+        errorMessage: 'no project with that id found', error
         });
     })
   next();
@@ -63,14 +63,14 @@ function validateTask(req, res, next) {
     res.status(400).json
     ({ 
         success: false, 
-        errorMessage: "missing required description field" 
+        errorMessage: "description required" 
     });
 
   } else if (!taskInfo.project_id) {
     res.status(400).json
     ({ 
         success: false, 
-        errorMessage: "missing required project_id field" 
+        errorMessage: "project id required" 
     });
 
   } else if (!taskInfo.completed) {
